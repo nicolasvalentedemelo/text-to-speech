@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumo de Água</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+            color: #333; /* Cor padrão do texto */
+        }
+        .inverted {
+            background-color: #333 !important; /* Cor de fundo invertida */
+            color: #fff !important; /* Cor do texto invertida */
+        }
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        section {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        /* Estilos para os botões de controle de tamanho de fonte */
+        .control-buttons {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+        .control-buttons button {
+            margin: 5px;
+            padding: 8px 16px; /* Aumento do padding para tornar os botões mais visíveis e clicáveis */
+            font-size: 16px;
+            background-color: #007bff; /* Alteração na cor de fundo dos botões */
+            color: #fff; /* Alteração na cor do texto dos botões */
+            border: none; /* Remoção da borda dos botões */
+            border-radius: 4px; /* Arredondamento das bordas dos botões */
+            cursor: pointer; /* Mudança do cursor ao passar sobre os botões */
+            transition: background-color 0.3s ease; /* Transição suave de cor ao passar o mouse */
+        }
+        .control-buttons button:hover {
+            background-color: #0056b3; /* Alteração na cor de fundo ao passar o mouse sobre os botões */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Consumo de Água</h1>
+</header>
+
+<nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#dicas">Dicas</a>
+    <a href="#contato">Contato</a>
+</nav>
+
+<section id="sobre">
+    <h2>Sobre o Consumo de Água</h2>
+    <p>O consumo responsável de água é essencial para o bem-estar humano e para o meio ambiente. A água é um recurso finito e precioso, e devemos usá-la com consciência.</p>
+</section>
+
+<section id="dicas">
+    <h2>Dicas para Economizar Água</h2>
+    <ul>
+        <li>Feche a torneira ao escovar os dentes ou lavar a louça.</li>
+        <li>Conserte vazamentos em torneiras e tubulações.</li>
+        <li>Utilize sistemas de captação de água da chuva.</li>
+        <li>Reutilize a água de enxágue de roupas para outros fins.</li>
+        <li>Instale dispositivos economizadores de água em chuveiros e torneiras.</li>
+    </ul>
+</section>
+
+<section id="contato">
+    <h2>Contato</h2>
+    <p>Para mais informações sobre consumo consciente de água, entre em contato conosco:</p>
+    <p>Email: exemplo@consumodeagua.com</p>
+    <p>Telefone: (XX) XXXX-XXXX</p>
+</section>
+
+<footer>
+    <p>&copy; 2024 Consumo de Água - Todos os direitos reservados</p>
+</footer>
+
+<!-- Botões de controle de tamanho de fonte -->
+<div class="control-buttons">
+    <!-- Código para aumentar fonte -->
+    <button onclick="increaseFontSize()">Aumentar Fonte</button>
+    <!-- Código para diminuir fonte -->
+    <button onclick="decreaseFontSize()">Diminuir Fonte</button>
+    <!-- Código para resetar tamanho da fonte -->
+    <button onclick="resetFontSize()">Tamanho Padrão</button>
+    <button onclick="invertColors()">Inverter Cores</button>
+</div>
+
+<!-- Adicionando o código para o VLibras -->
+<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+    </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+
+<!-- Script para manipular o tamanho da fonte -->
+<script>
+    function increaseFontSize() {
+        var currentFontSize = parseFloat(document.body.style.fontSize) || 16;
+        document.body.style.fontSize = (currentFontSize + 1) + 'px';
+    }
+
+    function decreaseFontSize() {
+        var currentFontSize = parseFloat(document.body.style.fontSize) || 16;
+        document.body.style.fontSize = (currentFontSize - 1) + 'px';
+    }
+
+    function resetFontSize() {
+        document.body.style.fontSize = '16px'; // Define o tamanho da fonte de volta para 16px
+    }
+
+    function invertColors() {
+        document.body.classList.toggle('inverted');
+    }
+
+    // Função para converter texto em áudio
+    function textToSpeech(text) {
+        var utterance = new SpeechSynthesisUtterance(text);
+        window.speechSynthesis.speak(utterance);
+    }
+</script>
+
+</body>
+</html>
